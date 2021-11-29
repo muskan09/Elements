@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Home{% endblock title %}
+{% block cssfiles %}
+<style>
+</style>
+{% endblock cssfiles %}
+{% block content %}
+<div class="parallax-content baner-content" id="home">
+    <div class="container">
+        <div class="first-content">
+            <h1>Muskan Kalsi</h1>
+            <span><em>Hi</em> hello sup</span>
+            {% if user.is_superuser %}
+            <div class="primary-button">
+                <a href="{% url 'admin' %}">go to admin</a>
+            </div>
+            {% else %}
+            <p>whatevs</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
