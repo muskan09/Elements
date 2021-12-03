@@ -65,4 +65,14 @@
         max-width: 1500px;
     }
 }
-
+@media (max-width: 1100px) {
+    .container {
+        max-width: auto;
+    }
+    .navbar {
+        height: auto;
+    }
+    .navbar .container {
+        border-bottom: 0;
+    }
+}

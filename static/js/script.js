@@ -1,5 +1,5 @@
 $('#fullpage').fullpage({
-    sectionsColor: ['#000000', '#0B1124', '#1B0300','#110023', 'orange', 'hotpink'],
+    sectionsColor: ['#000000', '#0B1124', '#1B0300', '#110023', '#021600', '#262626'],
     anchors: ['home', 'about', 'experience', 'technologies', 'projects', 'contact'],
     menu: '#myNavbar',
     navigation: true,
