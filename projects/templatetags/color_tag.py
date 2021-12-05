@@ -10,7 +10,7 @@ def get_color_from_topics(value):
         return '#20c997' 
     elif 'deep learning' in str(value).lower():
         return '#dc3545'
-    elif 'miscelleneous' in str(value).lower():
+    elif 'Miscellaneous' in str(value).lower():
         return '#ffc107'
     return '#0d6efd'
 

@@ -37,6 +37,7 @@
             <p id="element"></p>
             <br /><br />
             <a class="btn btn-info btn-lg resume" href="http://www.pdf995.com/samples/pdf.pdf" target="_blank">Resume</a>
+            <a class="btn btn-info btn-lg resume" href="{% url 'project_list' %}">Projects</a>
             <br /><br /><br />
             <a href="https://www.linkedin.com/in/muskan09/" title="linkedin"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/muskan09" title="github"><i class="fab fa-github-square"></i></a>
@@ -181,7 +182,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <a class="btn btn-info btn-lg resume" href="#" target="_blank">View all</a>
+                            <a class="btn btn-info btn-lg resume" href="{% url 'project_list' %}" target="_blank">View all</a>
                         </div>
                     </div>
                 </div>
@@ -191,12 +192,12 @@
                     </div>
                     <ul class="list-group">
                         <li class="list-group-item active"><i class="fas fa-project-diagram"></i>&nbsp; Project Topics</li>
-                        <li class="list-group-item"><a href="#"><i class="fas fa-brain"></i>&nbsp; <b>Machine Learning</b>: Click here to checkout my ML projects.</a></li>
-                        <li class="list-group-item"><a href="#"><i class="fas fa-water"></i>&nbsp; <b>Deep Learning</b>: Click here to check out my DL projects.</a></li>
-                        <li class="list-group-item"><a href="#"><i class="fas fa-wifi"></i>&nbsp; <b>Web Development</b>: Click here to check out my Web Dev projects.</a></li>
-                        <li class="list-group-item"><a href="#"><i class="fas fa-random"></i>&nbsp; <b>Miscellaneous</b>: Click here to check out my misc. projects.</a></li>
+                        <li class="list-group-item"><a href="{% url 'search_results'%}?q=machine+learning"><i class="fas fa-brain"></i>&nbsp; <b>Machine Learning</b>: Click here to checkout my ML projects.</a></li>
+                        <li class="list-group-item"><a href="{% url 'search_results'%}?q=deep+learning"><i class="fas fa-water"></i>&nbsp; <b>Deep Learning</b>: Click here to check out my DL projects.</a></li>
+                        <li class="list-group-item"><a href="{% url 'search_results'%}?q=web+development"><i class="fas fa-wifi"></i>&nbsp; <b>Web Development</b>: Click here to check out my Web Dev projects.</a></li>
+                        <li class="list-group-item"><a href="{% url 'search_results'%}?q=miscellaneous"><i class="fas fa-random"></i>&nbsp; <b>Miscellaneous</b>: Click here to check out my misc. projects.</a></li>
                         <div id="hidesmall">
-                        <li class="list-group-item"><a href="#"><i class="fas fa-list-alt"></i>&nbsp; <b>View All</b>: Click here to view all my projects.</a></li>
+                        <li class="list-group-item"><a href="{% url 'project_list'%}"><i class="fas fa-list-alt"></i>&nbsp; <b>View All</b>: Click here to view all my projects.</a></li>
                         </div>
                     </ul>
                 </div>
