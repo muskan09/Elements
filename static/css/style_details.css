@@ -1,0 +1,170 @@
+#myNavbar {
+    background-color: black !important;
+}
+
+#details-page {
+    background-color: black;
+    background-size: cover;
+}
+
+#top {
+    background-color: transparent;
+    margin-bottom: 50px;
+}
+
+    #top h1 {
+        margin-top: 200px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-size: 100px;
+    }
+
+#element {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 300;
+}
+
+#top i, #top i {
+    color: white;
+    font-size: 50px;
+    margin-right: 30px;
+}
+
+    #top i:hover, #top i:hover {
+        color: grey;
+    }
+
+.aboutText {
+    border-left: 3px solid white;
+}
+.aboutPara {
+    font-weight: 300;
+    text-align: left;
+    font-size: 20px;
+    color: white !important;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.0));
+}
+.resume, .resume:visited {
+    background-color: transparent;
+    border-color: white;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+    .resume:hover, .resume:active {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border-color: black;
+    }
+
+#aboutSection p {
+    font-size: 18px;
+    color: black;
+}
+
+#aboutSection h1 {
+    margin-top: 170px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 70px;
+    /*background-image: linear-gradient(to top, rgba(0, 16, 150, 0.0), rgba(0, 16, 150, 0.4));*/
+}
+
+#aboutSection .row {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#experience, #education, #languages, #domains, #platforms  {
+    margin-top: 50px;
+}
+
+    #experience h1, #education h1, #languages h1, #domains h1, #platforms h1 {
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-size: 70px;
+    }
+
+    #experience .row, #education .row, #languages .row, #domains .row, #platforms .row {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+.logo {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.0));
+}
+.card-header {
+    font-size: 20px;
+}
+
+i {
+    color: dimgrey;
+}
+
+.card-title {
+    margin-bottom: 20px;
+}
+
+.workexp {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    /*border: 1px groove lightgrey;*/
+}
+
+#experience p, #education p, #languages p, #domains p, #platforms p {
+    font-size: 20px;
+    color: lightgray;
+    font-weight: 100;
+}
+
+#experience h2, #education h2, #languages h2, #domains h2, #platforms h2 {
+    font-size: 30px;
+    color: white;
+}
+
+#experience i, #education i, #languages i, #domains i, #platforms i {
+    font-size: 100px;
+}
+
+.lang {
+    border: 1px solid grey;
+    padding-top: 6px;
+}
+
+.langrow {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.section {
+    background-color: black;
+}
+body {
+    background-color: black;
+}
+.container {
+    background-color: black !important;
+}
+@media (max-width: 1100px) {
+    .container {
+        max-width: auto;
+    }
+    .navbar {
+        height: auto;
+        background-color: black !important;
+    }
+    .navbar .container {
+        border-bottom: 0;
+        margin-bottom: 8px;
+    }
+}

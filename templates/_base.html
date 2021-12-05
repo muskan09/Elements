@@ -1,4 +1,5 @@
 {% load static %}
+{% load date_tag %}
 
 <!DOCTYPE html>
 <!-- saved from url=(0022)https://i2gi8.csb.app/ -->
@@ -40,29 +41,8 @@
     {% block cssfiles %}{% endblock cssfiles %}
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-transparent navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#home"><span style="font-weight: 400;">MUSKAN</span><span style="font-weight: 100;">KALSI</span></a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li data-menuanchor="home" class="topLeftBorders"><a href="#home">Home</a></li>
-                    <li data-menuanchor="about" class="topLeftBorders"><a href="#about">About</a></li>
-                    <li data-menuanchor="experience" class="topLeftBorders"><a href="#experience">Experience</a></li>
-                    <li data-menuanchor="technologies" class="topLeftBorders"><a href="#technologies">Technologies</a></li>
-                    <li data-menuanchor="projects" class="topLeftBorders"><a href="#projects">Projects</a></li>
-                    <li data-menuanchor="contact" class="topLeftBorders"><a href="#contact">Contact Me</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    {% block nav_stuff %}    
+    {% endblock nav_stuff %}
     <main>
         {% block content %}
         {% endblock content %}
