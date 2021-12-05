@@ -29,7 +29,7 @@ class Education(models.Model):
     def __str__(self):
         return self.title
 
-class Languages(models.Model):
+class Language(models.Model):
     title = models.CharField(max_length=100)
     icon = models.CharField(max_length=100, blank=True)
     color = models.CharField(max_length=30, default='white')
@@ -37,7 +37,7 @@ class Languages(models.Model):
     def __str__(self):
         return self.title
 
-class Domains(models.Model):
+class Domain(models.Model):
     title = models.CharField(max_length=100)
     icon = models.CharField(max_length=100, blank=True)
     color = models.CharField(max_length=30, default='white')
@@ -46,7 +46,7 @@ class Domains(models.Model):
     def __str__(self):
         return self.title
 
-class Platforms(models.Model):
+class Platform(models.Model):
     title = models.CharField(max_length=100)
     icon = models.CharField(max_length=100, blank=True)
     color = models.CharField(max_length=30, default='white')
