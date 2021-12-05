@@ -8,6 +8,7 @@ django = "*"
 psycopg2-binary = "*"
 environs = {extras = ["django"], version = "*"}
 pillow = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 

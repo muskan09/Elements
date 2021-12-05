@@ -1,0 +1,131 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load color_tag %}
+{% load crispy_forms_tags %}
+
+{% block title %}Muskan Kalsi | {{ project.title }}{% endblock title %}
+{% block cssfiles %}
+<style>
+    body {
+        background-color: black;
+    }
+
+    #pageHeading {
+        margin-top: 130px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-size: 100px;
+        text-align: left;
+    }
+
+    #myForm, #myDetails {
+        margin-top: 50px;
+    }
+
+    .nav-container {
+        background-color: black !important;
+    }
+    #topics {
+        color: {{project.topics|getColor}};
+        font-size: 30px;
+        font-weight: 100;
+    }
+    #techs {
+        color: white;
+        font-size: 20px;
+    }
+    #deets {
+        color: grey;
+    }
+    #myContainer {
+        padding-bottom: 70px;
+    }
+</style>
+{% endblock cssfiles %}
+{% block nav_stuff %}
+<nav class="navbar navbar-dark bg-black navbar-fixed-top">
+    <div class="container nav-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}"><span style="font-weight: 400;">MUSKAN</span><span style="font-weight: 100;">KALSI</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li data-menuanchor="about" class="topLeftBorders"><a href="{% url 'home' %}">Home</a></li>
+                <li data-menuanchor="about" class="topLeftBorders"><a href="{% url 'project_list' %}">Projects</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock nav_stuff %}
+{% block content %}
+<div class="container" id="myContainer">
+    <div class="row">
+        <div class="col-12">
+            <h1 id="pageHeading">{{project.title}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p id="topics">{{project.topics}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p id="techs">{{project.techs}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12" id="myDetails">
+            <p id="deets">{{project.details|linebreaksbr}}</p>
+        </div>
+    </div>
+
+    {% if project.url %}
+    <div class="row">
+        <div class="col-12">
+            <a href="{{project.url}}"><p style="color: {{project.topics|getColor}};">Project Link</p></a>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="col-sm-12 card mb-4  mt-3" id="myForm">
+        <div class="card-body">
+            <h4 style="color: white;">Discussions <span class="font-weight-light" style="color: {{project.topics|getColor}};">({{ comments.count }})</span></h4>
+            {% for comment in comments %}
+            <div class="comments" style="padding: 10px; color: white;">
+                <p class="font-weight-bold" style="color: white;">
+                    {{ comment.author }} &nbsp;&nbsp;&nbsp;
+                    <span class=" text-muted font-weight-normal">
+                        {{ comment.created }}
+                    </span>
+                </p>
+                {{ comment.comment | linebreaks }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!--hehehe-->
+    <div class="col-sm-12 card mb-4  mt-3">
+        <div class="card-body">
+            {% if new_comment %}
+            <div class="alert alert-success" role="alert">
+                Your comment was posted successfully.
+            </div>
+            {% else %}
+            <h3 style="color: white;">Leave a comment</h3>
+            <form method="post" style="margin-top: 1.3em; color: {{project.topics|getColor}};" id="myForm">
+                {{ comment_form|crispy }}
+                {% csrf_token %}
+                <button name="comments_form" type="submit" class="btn btn-primary" style="background-color: {{project.topics|getColor}};">Post Comment</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -12,6 +12,7 @@ class Project(models.Model):
 
     title = models.CharField(max_length=100)
     topics = models.CharField(max_length=200)
+    techs = models.CharField(max_length=300, default='python')
     details = models.TextField()
     url = models.URLField(blank=True)
 

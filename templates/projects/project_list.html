@@ -1,1 +1,93 @@
-<h1>proj list</h1>
+{% extends '_base.html' %}
+{% load static %}
+{% load color_tag %}
+
+{% block title %}Muskan Kalsi | Projects{% endblock title %}
+{% block cssfiles %}
+<style>
+    body {
+        background-color: black;
+    }
+    #pageHeading {
+        margin-top: 170px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-size: 100px;
+        text-align: left;
+    }
+    #myForm {
+        margin-top: 30px;
+    }
+    .nav-container {
+        background-color: black !important;
+    }
+</style>
+{% endblock cssfiles %}
+{% block nav_stuff %}
+<nav class="navbar navbar-dark bg-black navbar-fixed-top">
+    <div class="container nav-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}"><span style="font-weight: 400;">MUSKAN</span><span style="font-weight: 100;">KALSI</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li data-menuanchor="about" class="topLeftBorders"><a href="{% url 'home' %}">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock nav_stuff %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 id="pageHeading">Projects</h1>
+        </div>
+    </div>
+    <div class="row" id="myForm">
+        <div class="col-md-3">
+            <form class="form-inline" action="{% url 'search_results' %}"
+                  method="get">
+                <div class="input-group">
+                    <input name="q" class="form-control" type="text" placeholder="Search projects..."
+                           aria-label="Search">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-9">
+            <a class="btn btn-success" href="{% url 'search_results'%}?q=machine+learning">Machine Learning</a>
+            <a class="btn btn-danger" href="{% url 'search_results'%}?q=deep+learning">Deep Learning</a>
+            <a class="btn btn-info" href="{% url 'search_results'%}?q=web+development">Web Development</a>
+            <a class="btn btn-warning" href="{% url 'search_results'%}?q=miscelleneous">Miscelleneous</a>
+            <a class="btn btn-primary" href="{% url 'project_list' %}">View All</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        {% for project in project_list %}
+        <div class="col-md-2">
+            <div class="card-deck" style="margin-top: 70px;">
+                <div class="card" style="min-width: 15rem; max-width: 15rem; margin-bottom: 2em;">
+                    <div class="card-body d-flex flex-column">
+                        <a href="{{ project.get_absolute_url }}"><h2 class="card-title" style="color: {{ project.topics|getColor }};">{{ project.title }}</h2></a>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ project.topics }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ project.techs }}</h6>
+                        <p class="card-text" style="color: white;">{{ project.details|shorten }}</p>
+                        <a href="{{project.get_absolute_url}}" class="btn mt-auto btn-primary" style="background-color: {{project.topics|getColor}};">Open project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:6 %}
+        </div>
+        <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
