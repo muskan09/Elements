@@ -1,0 +1,220 @@
+.fp-tableCell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#section0 {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.0), rgba(0,0,0,0.3) ), url('../img/fullNebula.png');
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    text-align: left;
+}
+p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 300;
+}
+
+.resume, .resume:visited {
+    background-color: transparent;
+    border-color: white;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+    .resume:hover, .resume:active {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border-color: black;
+    }
+
+#section0 i, #section5 i {
+    color: white;
+    font-size: 50px;
+    margin-right: 30px;
+}
+
+    #section0 i:hover, #section5 i:hover {
+        color: grey;
+    }
+
+#section1 {
+    background-image: linear-gradient(to left, rgba(0,0,0,0.0), rgba(0,0,0,0.3) ), url('../img/fullWater.png');
+    background-size: cover;
+}
+
+    #section1 h2 {
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-size: 50px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+.aboutText {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+    border-left: 3px solid white;
+}
+
+    .aboutText:hover {
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+    }
+
+.aboutPara {
+    margin-left: 10px;
+}
+
+#section2 {
+    background-image: linear-gradient(to left, rgba(0,0,0,0.0), rgba(0,0,0,0.0) ), url('../img/fireLight.png');
+    background-size: cover;
+}
+
+    #section2 li, #section3 li, #section4 li {
+        background-color: rgba(0,0,0,0.4);
+        color: white;
+        border: 0;
+    }
+
+        #section2 li:hover, #section3 li:hover, #section4 li:hover {
+            background-color: rgba(0,0,0,1);
+            border: 1px solid white;
+        }
+
+        #section2 li.active, #section3 li.active, #section4 li.active {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            background-color: transparent;
+            color: white;
+            border-bottom: 1px solid white;
+        }
+
+    #section2 ul, #section3 ul, #section4 ul {
+        border: 1px solid white;
+    }
+
+#section3 {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url('../img/lightningMed.png');
+    background-size: cover;
+}
+
+#section4 {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url('../img/rainforest1.png');
+    background-size: cover;
+}
+
+#section5 {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.0) ), url('../img/fullLinesVar.png');
+    background-size: cover;
+}
+
+#section4 a, a:visited {
+    color: white;
+}
+
+    #section4 a:hover {
+        color: grey;
+    }
+
+    #section4 a:active {
+        color: darkgrey;
+    }
+
+.social-icons {
+    margin-top: 30px;
+}
+
+#ContactForm {
+    width: 100%;
+    max-width: 680px;
+    padding: 45px 45px 30px;
+    margin-bottom: 95px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+    #ContactForm:hover {
+        background-color: rgba(0, 0, 0, 1);
+        border: 1px solid white;
+    }
+
+.form-group {
+    max-width: 355px;
+}
+
+.form-control {
+    background: transparent;
+    border-color: #999999;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.btn-submit {
+    background-color: #999999;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+}
+
+    .btn-submit:focus,
+    .btn-submit:hover {
+        background-color: #676767;
+    }
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.arrowDown {
+    position: fixed;
+    z-index: 99;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-left: -38px;
+    left: 50%;
+}
+
+.arrowDown {
+    bottom: 20px;
+    border-width: 38.5px 34px 0 38.5px;
+    border-color: white transparent transparent transparent;
+}
+
+    .arrowDown:hover {
+        border-color: darkgray transparent transparent transparent;
+    }
+
+@media only screen and (max-width: 1100px) {
+    #hidesmall {
+        display: none;
+    }
+
+    .social-icons {
+        margin-top: 0;
+    }
+
+    #section5 p {
+        font-size: 20px;
+    }
+
+    #section5 h1 {
+        margin-top: 10px;
+        font-size: 45px;
+    }
+}
+
+@media only screen and (min-width: 1101px) {
+    #hidelarge {
+        display: none;
+    }
+}

@@ -9,6 +9,8 @@ psycopg2-binary = "*"
 environs = {extras = ["django"], version = "*"}
 pillow = "*"
 django-crispy-forms = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
